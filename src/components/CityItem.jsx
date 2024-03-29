@@ -18,10 +18,18 @@ const flagemojiToPNG = (flag) => {
   );
 };
 
-function CityItem({ city: { cityName, emoji, date, id } }) {
+function CityItem({
+  city: {
+    cityName,
+    emoji,
+    date,
+    id,
+    position: { lat, lng },
+  },
+}) {
   return (
     <li>
-      <Link to={`${id}`} className={styles.cityItem}>
+      <Link to={`${id}?lat=${lat}&lng=${lng}`} className={styles.cityItem}>
         <span className={styles.emoji}>{flagemojiToPNG(emoji)}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
