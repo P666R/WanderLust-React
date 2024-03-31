@@ -11,6 +11,11 @@
   gap: 2rem;
 }
 
+.city::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+
 .row {
   display: flex;
   flex-direction: column;
